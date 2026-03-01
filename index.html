@@ -6,18 +6,42 @@
     <title>about you</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* CSS Tambahan buat pudarin teks sesuai request */
+        /* FIX TEKS & TOMBOL SOFT SESUAI REQUEST */
         h1, h3, p, .song-info p {
-            color: #4a76a8 !important; /* Biru pudar, gak terlalu gelap */
-            opacity: 0.85;
+            color: #5a82ad !important; /* Biru pudar soft */
+            opacity: 0.8;
         }
+        
         .judul-ultah {
-            color: #3d6a9e !important;
+            color: #4a76a8 !important;
             opacity: 0.9;
         }
-        .playlist-asli span, .artist {
-            color: #6b8fb9 !important;
+
+        /* Tombol dibikin soft (pastel blue) */
+        .btn.primary {
+            background-color: #a2c4e0 !important; /* Pastel Blue Soft */
+            color: #ffffff !important;
+            border: none !important;
+            box-shadow: 0 4px 15px rgba(162, 196, 224, 0.4) !important;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .btn.primary:active {
+            transform: scale(0.95);
+            opacity: 1;
+        }
+
+        /* Playlist pudar */
+        .artist, .playlist-asli span {
+            color: #8da9c4 !important;
             opacity: 0.7;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.65) !important;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
@@ -32,24 +56,24 @@
 <div class="slider" id="slider">
 
     <section class="page">
-        <img src="https://media.tenor.com/la7Q2IBrnWAAAAAj/bleh-mochi.gif" style="width: 140px;">
+        <img src="https://media.tenor.com/la7Q2IBrnWAAAAAj/bleh-mochi.gif" style="width: 130px;">
         <h1 class="fade-blur">haloo kadalllll</h1>
         <button class="btn primary" onclick="goTo(1)">tap disinii <3</button>
     </section>
 
     <section class="page">
-        <img src="https://media.tenor.com/w3viRk1pkNEAAAAj/cat-tip.gif" style="width: 140px;">
+        <img src="https://media.tenor.com/w3viRk1pkNEAAAAj/cat-tip.gif" style="width: 130px;">
         <h1 class="fade-blur">are you ready to open thisss?</h1>
         <div class="btn-group">
             <button class="btn primary" onclick="goTo(2)">yess</button>
-            <button class="btn outline" id="noBtn">noo</button>
+            <button class="btn outline" id="noBtn" style="border-color: #a2c4e0; color: #a2c4e0;">noo</button>
         </div>
     </section>
 
     <section class="page">
-        <div class="card password-card" id="passCard" style="max-width: 320px; padding: 25px;">
-            <img src="https://media.tenor.com/efjkXZoqfdgAAAAj/no-ignore.gif" id="charImg" style="width: 100px !important; margin-bottom: 10px;">
-            <h3 class="fade-blur" style="font-size: 0.95rem; line-height: 1.4;">hi kadal, ayo tebak passwordnya,<br>i bet u knoww</h3>
+        <div class="card password-card" id="passCard" style="max-width: 310px; padding: 25px;">
+            <img src="https://media.tenor.com/efjkXZoqfdgAAAAj/no-ignore.gif" id="charImg" style="width: 90px !important; margin-bottom: 10px;">
+            <h3 class="fade-blur" style="font-size: 0.9rem;">hi kadal, ayo tebak passwordnya,<br>i bet u knoww</h3>
             <div class="dots-container">
                 <div class="dot"></div><div class="dot"></div><div class="dot"></div>
                 <div class="dot"></div><div class="dot"></div><div class="dot"></div>
@@ -60,58 +84,58 @@
                 <button onclick="pressNum(7)">7</button><button onclick="pressNum(8)">8</button><button onclick="pressNum(9)">9</button>
                 <div style="visibility: hidden;"></div><button onclick="pressNum(0)">0</button><button onclick="deleteNum()">⌫</button>
             </div>
-            <p id="errorText" style="font-size: 0.7rem; color: #cc7a7a !important; margin: 5px 0;"></p>
-            <p class="clue" style="font-size: 0.75rem; opacity: 0.6;">clue : your birthday</p>
+            <p id="errorText" style="font-size: 0.7rem; min-height: 15px;"></p>
+            <p class="clue" style="font-size: 0.7rem;">clue : your birthday</p>
         </div>
     </section>
 
     <section class="page">
-        <img src="https://media.tenor.com/YkGFt_3j8fsAAAAj/boba.gif" style="width: 80px;">
-        <h1 class="fade-blur" style="padding: 0 30px; font-size: 1.1rem;">thank you for being part in my life and for always making me feel special, kadal i have something for u today</h1>
+        <img src="https://media.tenor.com/YkGFt_3j8fsAAAAj/boba.gif" style="width: 70px;">
+        <h1 class="fade-blur" style="padding: 0 35px; font-size: 1rem;">thank you for being part in my life and for always making me feel special, kadal i have something for u today</h1>
         <button class="btn primary" onclick="goTo(4)">klik ini &lt;3</button>
     </section>
 
     <section class="page">
-        <img src="img/kadal2.jpg" style="width: 180px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-        <h1 style="padding: 0 25px; font-size: 1.1rem; margin-top: 20px;">today my most beautiful, loving and caring girlfriend turns 19! <br>happy kadal dayy</h1>
+        <img src="img/kadal2.jpg" style="width: 170px; border-radius: 20px;">
+        <h1 style="padding: 0 30px; font-size: 1rem; margin-top: 15px;">today my most beautiful, loving and caring girlfriend turns 19! <br>happy kadal dayy</h1>
         <button class="btn primary" onclick="goTo(5)">yeayyy</button>
     </section>
 
     <section class="page playlist-page">
-        <div class="card" style="width: 85%; max-width: 320px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3);">
+        <div class="card" style="width: 85%; max-width: 310px; padding: 20px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                <img src="img/kadal.jpg" style="width: 55px; height: 55px; border-radius: 12px; object-fit: cover;">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.494 17.302c-.22.361-.685.474-1.045.254-2.883-1.762-6.513-2.162-10.79-1.182-.414.095-.828-.163-.923-.578-.095-.414.163-.828.578-.923 4.69-1.072 8.7-1.022 11.925.952.36.22.474.685.255 1.045zm1.467-3.264c-.277.45-.865.594-1.314.317-3.3-2.028-8.33-2.617-12.23-1.432-.505.153-1.043-.135-1.196-.64-.153-.505.135-1.043.64-1.196 4.456-1.353 10.003-.687 13.784 1.635.45.277.594.865.317 1.315zm.128-3.414c-3.958-2.35-10.512-2.568-14.32-.414-.607.342-1.383.132-1.725-.475-.342-.607-.132-1.383.475-1.725 4.385-2.476 11.614-2.222 16.14.467.548.324.733 1.036.408 1.583-.324.548-1.036.733-1.583.408z"/></svg>
+                <img src="img/kadal.jpg" style="width: 50px; height: 50px; border-radius: 12px; object-fit: cover;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#1DB954" style="opacity: 0.8;"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.494 17.302c-.22.361-.685.474-1.045.254-2.883-1.762-6.513-2.162-10.79-1.182-.414.095-.828-.163-.923-.578-.095-.414.163-.828.578-.923 4.69-1.072 8.7-1.022 11.925.952.36.22.474.685.255 1.045zm1.467-3.264c-.277.45-.865.594-1.314.317-3.3-2.028-8.33-2.617-12.23-1.432-.505.153-1.043-.135-1.196-.64-.153-.505.135-1.043.64-1.196 4.456-1.353 10.003-.687 13.784 1.635.45.277.594.865.317 1.315zm.128-3.414c-3.958-2.35-10.512-2.568-14.32-.414-.607.342-1.383.132-1.725-.475-.342-.607-.132-1.383.475-1.725 4.385-2.476 11.614-2.222 16.14.467.548.324.733 1.036.408 1.583-.324.548-1.036.733-1.583.408z"/></svg>
             </div>
             <div style="text-align: left;">
-                <h3 style="font-size: 0.9rem; margin-bottom: 15px;">this remind me of u</h3>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                    <div><p style="margin:0; font-weight:600; font-size:0.85rem;">Somebody's Pleasure</p><span class="artist" style="font-size:0.7rem;">Aziz Hedra</span></div>
-                    <span style="font-size:0.75rem;">03:44</span>
+                <h3 style="font-size: 0.85rem; margin-bottom: 15px;">this remind me of u</h3>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <div><p style="margin:0; font-weight:600; font-size:0.8rem;">Somebody's Pleasure</p><span class="artist" style="font-size:0.7rem;">Aziz Hedra</span></div>
+                    <span style="font-size:0.7rem;">03:44</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                    <div><p style="margin:0; font-weight:600; font-size:0.85rem;">You'll Be In My Heart</p><span class="artist" style="font-size:0.7rem;">NIKI</span></div>
-                    <span style="font-size:0.75rem;">04:18</span>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <div><p style="margin:0; font-weight:600; font-size:0.8rem;">You'll Be In My Heart</p><span class="artist" style="font-size:0.7rem;">NIKI</span></div>
+                    <span style="font-size:0.7rem;">04:18</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-                    <div><p style="margin:0; font-weight:600; font-size:0.85rem;">About You</p><span class="artist" style="font-size:0.7rem;">The 1975</span></div>
-                    <span style="font-size:0.75rem;">05:26</span>
+                    <div><p style="margin:0; font-weight:600; font-size:0.8rem;">About You</p><span class="artist" style="font-size:0.7rem;">The 1975</span></div>
+                    <span style="font-size:0.7rem;">05:26</span>
                 </div>
             </div>
-            <button class="btn primary" style="width: 100%;" onclick="goTo(6)">Next →</button>
+            <button class="btn primary" style="width: 100%; border-radius: 50px;" onclick="goTo(6)">Next →</button>
         </div>
     </section>
 
     <section class="page">
-        <img src="https://c.tenor.com/Veq4zvSQkdAAAAAC/tenor.gif" style="width: 100px;">
-        <h3 style="margin: 20px 0; padding: 0 30px;">okayy last one, i made something for your birthday, read it slowly okayyy</h3>
-        <button class="btn primary" style="border-radius: 50%; width: 50px; height: 50px;" onclick="startBirthday()"><3</button>
+        <img src="https://c.tenor.com/Veq4zvSQkdAAAAAC/tenor.gif" style="width: 90px;">
+        <h3 style="margin: 20px 0; padding: 0 40px; font-size: 0.95rem;">okayy last one, i made something for your birthday, read it slowly okayyy</h3>
+        <button class="btn primary" style="border-radius: 50%; width: 55px; height: 55px;" onclick="startBirthday()"><3</button>
     </section>
 
     <section class="page">
         <div class="card" style="width: 85%; padding: 25px;">
-            <h1 class="judul-ultah" style="font-size: 1.3rem;">Happy birthday, my love 💙</h1>
-            <p id="typewriter" style="font-size: 0.9rem; line-height: 1.6; min-height: 120px; margin-top: 15px;"></p>
+            <h1 class="judul-ultah" style="font-size: 1.2rem;">Happy birthday, my love 🩵 </h1>
+            <p id="typewriter" style="font-size: 0.85rem; line-height: 1.6; min-height: 110px; margin-top: 15px;"></p>
         </div>
     </section>
 
@@ -175,14 +199,14 @@ function startBirthday() {
         if (iTyping < teks.length) {
             element.innerHTML += teks.charAt(iTyping);
             iTyping++;
-            setTimeout(mengetik, 60);
+            setTimeout(mengetik, 65);
         }
     }
     setTimeout(mengetik, 1000);
 }
 
 function generateHearts() {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 12; i++) {
         let h = document.createElement("div");
         h.className = "heart"; h.innerText = "🩵";
         h.style.left = Math.random() * 100 + "vw";
@@ -193,7 +217,7 @@ function generateHearts() {
 }
 
 function generateConfetti() {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 12; i++) {
         let c = document.createElement("div");
         c.className = "confetti"; c.innerText = "🤍";
         c.style.left = Math.random() * 100 + "vw";
