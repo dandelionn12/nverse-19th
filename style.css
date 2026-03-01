@@ -1,26 +1,26 @@
-/* --- RESET & KUNCI LAYAR --- */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', 'Segoe UI', sans-serif;
     -webkit-tap-highlight-color: transparent;
-    /* Kunci interaksi sentuh agar tidak bisa scroll/zoom manual */
+    
     touch-action: none; 
 }
 
 html, body {
     width: 100vw;
     height: 100vh;
-    overflow: hidden; /* Sembunyikan scrollbar */
-    position: fixed; /* Paksa layar tetap di tempat, cegah bounce effect */
+    overflow: hidden; 
+    position: fixed; 
     background: linear-gradient(to bottom, #e3f2fd, #f5faff);
 }
 
-/* --- SLIDER CORE --- */
+
 .slider {
     display: flex !important;
-    width: 900vw; /* Sesuai jumlah page kamu */
+    width: 900vw; 
     height: 100vh;
     transition: transform 0.8s cubic-bezier(0.77, 0, 0.18, 1);
 }
@@ -41,7 +41,7 @@ html, body {
     gap: 20px;
 }
 
-/* --- TEXT & ANIMASI ZOOM (KECIL KE GEDE) --- */
+
 h1, h2, h3, p, .btn {
     color: #1a4d8f !important;
     font-weight: 700 !important;
@@ -52,7 +52,7 @@ h1 {
     line-height: 1.3; 
 }
 
-/* Class ini yang bikin efek teks muncul membesar */
+
 .fade-blur {
     animation: zoomIn 1.2s ease-out forwards;
 }
@@ -60,15 +60,15 @@ h1 {
 @keyframes zoomIn {
     0% {
         opacity: 0;
-        transform: scale(0.5); /* Mulai dari kecil */
+        transform: scale(0.5); 
     }
     100% {
         opacity: 1;
-        transform: scale(1); /* Jadi ukuran normal */
+        transform: scale(1); 
     }
 }
 
-/* --- ELEMENT VISUAL --- */
+
 .main-img {
     width: 140px!important;
     display:block!important;
@@ -78,7 +78,7 @@ h1 {
     animation: zoomIn 1s ease-out;
 }
 
-/* --- TOMBOL & GROUP --- */
+
 .btn-group {
     display: flex;
     justify-content: center;
@@ -87,7 +87,7 @@ h1 {
     width: 100%;
     min-height: 100px;
     position: relative;
-    overflow: visible; /* Penting agar tombol 'no' tidak terpotong saat lari */
+    overflow: visible; 
 }
 
 .btn {
@@ -106,7 +106,7 @@ h1 {
 
 button:active { transform: scale(0.9) !important; }
 
-/* --- PASSWORD CARD --- */
+
 .card {
     background: white;
     padding: 25px 20px;
@@ -147,7 +147,7 @@ button:active { transform: scale(0.9) !important; }
     border-radius: 15px;
 }
 
-/* --- MUSIC & DEKORASI --- */
+
 .music-btn {
     position: fixed;
     top: 20px;
@@ -176,7 +176,7 @@ button:active { transform: scale(0.9) !important; }
     100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
 }
 
-/* --- FEEDBACK ERROR --- */
+
 .shake { animation: shake 0.4s ease-in-out; }
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
@@ -190,5 +190,21 @@ button:active { transform: scale(0.9) !important; }
     margin-top: 10px;
     height: 15px;
 }
+
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px); 
+    }
+    to {
+        opacity: 0.8; 
+        transform: translateY(0);
+    }
+}
+
 
 
