@@ -36,7 +36,8 @@ html, body {
     text-align: center;
     padding: 20px;
     position: relative;
-    overflow: hidden;
+    overflow-y:auto;
+    overflow-x:hidden;
     gap: 20px;
 }
 
@@ -70,7 +71,7 @@ h1 {
 /* --- ELEMENT VISUAL --- */
 .main-img {
     width: 80%;
-    max-width: 150px;
+    max-width: 80px;
     border-radius: 20px;
     height: auto;
     animation: zoomIn 1s ease-out;
@@ -188,3 +189,4 @@ button:active { transform: scale(0.9) !important; }
     margin-top: 10px;
     height: 15px;
 }
+
