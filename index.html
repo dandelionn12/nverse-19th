@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>about you</title>
@@ -67,16 +66,16 @@
     <section class="page">
         <img src="https://media.tenor.com/YkGFt_3j8fsAAAAj/boba.gif" style="width: 80px !important; height: auto !important; max-width: 80px !important; display: block; margin: 0 auto 15px auto;opacity: 0.9;">
         <h1 class="fade-blur">thank you for being part in my life and for always making me feel special, kadal i have something for u today</h1>
-        <button class="btn primary" onclick="goTo(4)">klik ini &lt;3</button>
+        <button class="btn primary" onclick="goTo(3)">klik ini &lt;3</button>
     </section>
 
     <section class="page">
         <img src="img/kadal2.jpg" style="width: 150px !important; height: auto !important; max-width: 150px !important; display: block; margin: 0 auto 15px auto;opacity: 0.9;">
         <h1>today my most beautiful, loving and caring girlfriend turns 19! <br>happy kadal dayy</h1>
-        <button class="btn primary" onclick="goTo(5)">yeayyy</button>
+        <button class="btn primary" onclick="goTo(4)">yeayyy</button>
     </section>
 
-<section class="page playlist-page">
+    <section class="page playlist-page">
         <div class="playlist-card">
             <div class="playlist-header">
                 <img src="img/kadal.jpg" class="profile-img">
@@ -85,49 +84,45 @@
                 </div>
             </div>
             <div class="playlist-asli">
-    <h3> this remind me of u</h3>
-    <div class="song-asli">
-        <div class="song-info">
-            <p>Somebody's Pleasure</p>
-            <span class="artist">Aziz Hedra</span>
-        </div>
-        <span>03:44</span>
-
-</div>
-
-<div class="song-asli">
-        <div class="song-info">
-            <p>You'll Be In My Heart</p>
-            <span class="artist">NIKI</span>
-        </div>
-        <span>04:18</span>
-    </div>
-
-    <div class="song-asli">
-        <div class="song-info">
-            <p>About You</p>
-            <span class="artist">The 1975</span>
-        </div>
-        <span>05:26</span>
-    </div>
-</div>
-            <button class="btn primary spotify-btn" onclick="goTo(6)">Next →</button>
+                <h3> this remind me of u</h3>
+                <div class="song-asli">
+                    <div class="song-info">
+                        <p>Somebody's Pleasure</p>
+                        <span class="artist">Aziz Hedra</span>
+                    </div>
+                    <span>03:44</span>
+                </div>
+                <div class="song-asli">
+                    <div class="song-info">
+                        <p>You'll Be In My Heart</p>
+                        <span class="artist">NIKI</span>
+                    </div>
+                    <span>04:18</span>
+                </div>
+                <div class="song-asli">
+                    <div class="song-info">
+                        <p>About You</p>
+                        <span class="artist">The 1975</span>
+                    </div>
+                    <span>05:26</span>
+                </div>
+            </div>
+            <button class="btn primary spotify-btn" onclick="goTo(5)">Next →</button>
         </div>
     </section>
 
-<section class="page">
-    <img src="https://c.tenor.com/Veq4zvSQkdAAAAAC/tenor.gif" style="width: 100px;height: auto;">
-    <h3 style="color: #ace2f5; font-family: 'Poppins', sans-serif; margin: 15px 0; padding: 0 25px;font-size: 1.1rem;opacity: 0.8;font-weight: 500;line-height: 1.5;">
-        okayy last one, i made something for your birthday, read it slowly okayyy
-    </h3>
-    <button class="btn primary" style="border-radius: 50%; width: 50px; height: 50px;margin-top: 0px;justify-content: center;align-items: center;display: flex;" onclick="startBirthday()"><3
-    </button>
-</section>
+    <section class="page">
+        <img src="https://c.tenor.com/Veq4zvSQkdAAAAAC/tenor.gif" style="width: 100px;height: auto;">
+        <h3 style="color: #ace2f5; font-family: 'Poppins', sans-serif; margin: 15px 0; padding: 0 25px;font-size: 1.1rem;opacity: 0.8;font-weight: 500;line-height: 1.5;">
+            okayy last one, i made something for your birthday, read it slowly okayyy
+        </h3>
+        <button class="btn primary" style="border-radius: 50%; width: 50px; height: 50px;margin-top: 0px;justify-content: center;align-items: center;display: flex;" onclick="startBirthday()"><3</button>
+    </section>
 
     <section class="page">
         <div class="card">
             <h1 class="judul-ultah">Happy birthday, my love 💙</h1>
-            <p class="teks-pudar"id="typewriter"></p>
+            <p class="teks-pudar" id="typewriter"></p>
         </div>
     </section>
 
@@ -186,7 +181,6 @@ function pressNum(num) {
 function deleteNum() {
     currentInput = currentInput.slice(0, -1);
     updateDots();
-
 }
 
 function startBirthday() {
@@ -194,7 +188,17 @@ function startBirthday() {
     generateHearts();
     generateConfetti();
     document.getElementById("typewriter").innerHTML = ""; 
-    i = 0; 
+    let iTyping = 0; 
+    
+    const teksTujuan = "On your special day, I hope your life is always full of happiness, wherever you are, the world is better because you’re in it, and I’m so grateful to have you in my life.";
+    
+    function efekKetik() {
+        if (iTyping < teksTujuan.length) {
+            document.getElementById("typewriter").innerHTML += teksTujuan.charAt(iTyping);
+            iTyping++;
+            setTimeout(efekKetik, 50);
+        }
+    }
     setTimeout(efekKetik, 1000);
 }
 
@@ -220,18 +224,6 @@ function generateConfetti() {
     }
 }
 
-const teksTujuan = "On your special day, I hope your life is always full of happiness, wherever you are, the world is better because you’re in it, and I’m so grateful to have you in my life.";
-let speed = 50; 
-let i = 0;
-
-function efekKetik() {
-    if (i < teksTujuan.length) {
-        document.getElementById("typewriter").innerHTML += teksTujuan.charAt(i);
-        i++;
-        setTimeout(efekKetik, 100);
-    }
-}
-
 function toggleMusic() {
     const music = document.getElementById("bgMusic");
     if (music.paused) music.play();
@@ -242,24 +234,19 @@ const noBtn = document.getElementById("noBtn");
 
 if (noBtn) {
     const moveButton = () => {
-        
         const areaLari = 100; 
-
         const randomX = (Math.random() - 0.5) * areaLari * 2;
         const randomY = (Math.random() - 0.5) * areaLari * 2;
-
-    
         noBtn.style.transition = "all 0.3s ease";
         noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
     };
-
     noBtn.addEventListener("mouseover", moveButton);
     noBtn.addEventListener("touchstart", (e) => {
         e.preventDefault();
         moveButton();
     });
 }
-</script
+</script>
 
 </body>
 </html>
