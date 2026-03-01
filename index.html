@@ -171,12 +171,14 @@ function pressNum(num) {
         } else {
             const card = document.getElementById("passCard");
             card.classList.add("shake");
+            charImg.src = "https://media.tenor.com/DhNYwZXLWQgAAAAj/unhappy-crossed.gif";
             document.getElementById("errorText").innerText = "ih kok salah terus sih 😒";
             setTimeout(() => {
                 card.classList.remove("shake");
                 currentInput = "";
                 updateDots();
                 document.getElementById("errorText").innerText = "";
+                charImg.src = "https://media.tenor.com/DhNYwZXLWQgAAAAj/unhappy-crossed.gif";
             }, 2000);
         }
     }
@@ -241,5 +243,6 @@ if (noBtn) {
 </script>
 </body>
 </html>
+
 
 
